@@ -1,0 +1,8 @@
+parameters:
+    astina_quill.form.type.quill.class: Astina\Bundle\QuillBundle\Form\QuillType
+
+services:
+    astina_quill.form.type.quill:
+        class: %astina_quill.form.type.quill.class%
+        tags:
+            - { name: form.type, alias: quill }

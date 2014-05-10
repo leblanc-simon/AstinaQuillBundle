@@ -1,0 +1,31 @@
+{% block quill_widget %}
+{% spaceless %}
+
+    {% set editor_id = ('quill_editor--' ~ id) %}
+    {% set toolbar_id = ('quill_toolbar--' ~ id) %}
+
+    <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+
+    <div id="{{ toolbar_id }}">
+        {% include toolbar_template %}
+    </div>
+    <div id="{{ editor_id }}">{{ value | raw }}</div>
+
+    <script>window.Quill || document.write("<script src=\"{{ asset(quill_url) }}\"><\/script>")</script>
+    <script type="text/javascript">
+
+        var editor =new Quill("#{{ editor_id }}", {
+            theme: {{ theme ? ('"' ~ theme ~ '"')|raw : 'null' }},
+            modules: {
+                "toolbar": { container: "#{{ toolbar_id }}" },
+                "link-tooltip": true
+            }
+        });
+        editor.on("text-change", function(delta, source) {
+            document.getElementById("{{ id }}").value = editor.getHTML();
+        });
+
+    </script>
+
+{% endspaceless %}
+{% endblock %}
