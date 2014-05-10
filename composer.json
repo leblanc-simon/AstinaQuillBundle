@@ -1,0 +1,22 @@
+{
+    "name": "astina/quill-bundle",
+    "description": "Symfony 2 bundle integrating Quill editor as a form type.",
+    "license": "MIT",
+    "keywords": ["quill", "wysiwyg", "form"],
+    "type": "symfony-bundle",
+    "homepage": "http://astina.ch",
+    "authors": [
+        {
+            "name": "Astina AG",
+            "email": "admin@astina.ch"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/symfony": "~2.3"
+    },
+    "autoload": {
+        "psr-0": { "Astina\\Bundle\\QuillBundle": "" }
+    },
+    "target-dir": "Astina/Bundle/QuillBundle"
+}
