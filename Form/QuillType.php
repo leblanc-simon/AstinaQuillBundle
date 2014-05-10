@@ -23,13 +23,6 @@ class QuillType extends AbstractType
         $this->theme = $theme;
     }
 
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->setAttribute('style', 'display: none;')
-        ;
-    }
-
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['quill_url'] = $options['quill_url'];
