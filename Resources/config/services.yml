@@ -5,4 +5,4 @@ services:
     astina_quill.form.type.quill:
         class: %astina_quill.form.type.quill.class%
         tags:
-            - { name: form.type, alias: quill }
+            - { name: form.type }
