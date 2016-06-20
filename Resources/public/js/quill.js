@@ -8433,7 +8433,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Object.keys(_this.options.handlers).forEach(function (format) {
 	      _this.addHandler(format, _this.options.handlers[format]);
 	    });
-	    [].forEach.call(_this.container.querySelectorAll('button, select'), function (input) {
+	    [].forEach.call(_this.container.querySelectorAll('a, button, select'), function (input) {
 	      _this.attach(input);
 	    });
 	    _this.quill.on(_quill2.default.events.SELECTION_CHANGE, _this.update, _this);
