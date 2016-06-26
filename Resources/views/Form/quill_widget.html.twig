@@ -3,6 +3,7 @@
 
     {% set editor_id = ('quill_editor--' ~ id) %}
     {% set toolbar_id = ('quill_toolbar--' ~ id) %}
+    {% set editor_name = ('quill_toolbar_' ~ id) %}
 
     <textarea {{ block('widget_attributes') }}>{{ value|raw }}</textarea>
 
@@ -14,14 +15,14 @@
     <script>window.Quill || document.write("<script src=\"{{ asset(quill_url) }}\"><\/script>")</script>
     <script type="text/javascript">
 
-        var editor =new Quill("#{{ editor_id }}", {
+        var {{ editor_name }} = new Quill("#{{ editor_id }}", {
             theme: {{ theme ? ('"' ~ theme ~ '"')|raw : 'null' }},
             modules: {
                 "toolbar": { container: "#{{ toolbar_id }}" }
             }
         });
-        editor.on("text-change", function(delta, source) {
-            document.getElementById("{{ id }}").value = editor.container.firstChild.innerHTML;
+        {{ editor_name }}.on("text-change", function(delta, source) {
+            document.getElementById("{{ id }}").value = {{ editor_name }}.container.firstChild.innerHTML;
         });
 
     </script>
