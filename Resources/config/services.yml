@@ -3,6 +3,6 @@ parameters:
 
 services:
     astina_quill.form.type.quill:
-        class: %astina_quill.form.type.quill.class%
+        class: '%astina_quill.form.type.quill.class%'
         tags:
             - { name: form.type }
